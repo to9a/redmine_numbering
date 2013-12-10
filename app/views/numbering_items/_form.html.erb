@@ -1,0 +1,33 @@
+<%= error_messages_for 'numbering_item' %>
+<div class="box tabular" style="width:50%; margin:0px 0px 20px 0px;">
+	<!-- <p>
+		<%= form.label_for_field :project %>
+		<%= form.collection_select :project_name, Project.all, :id, :name, :include_blank => true %>
+	</p> -->
+	<p>
+		 <%= form.select :project_name, Project.all.map{|i| [i.name, i.name]}, {:include_blank => true, :required => true} %>
+	</p>
+	<!-- <p>
+		<%= form.label_for_field :category %>
+		<%= form.collection_select :id, NumberingCategory.all, :id, :disp_name, :include_blank => true %>
+	</p> -->
+	<p>
+		 <%= form.select :numbering_category_id, NumberingCategory.all.map{|i| [i.disp_name, i.id]}, {:include_blank => true, :required => true} %>
+	</p>
+	<!-- <p>
+		<%= form.label_for_field :kind %>
+		<%= form.collection_select :id, NumberingKind.all, :id, :disp_name, :include_blank => true %>
+	</p> -->
+	<p>
+		 <%= form.select :numbering_kind_id, NumberingKind.all.map{|i| [i.disp_name, i.id]}, {:include_blank => true, :required => true} %>
+	</p>
+	<!-- <p>
+		<%= form.label_for_field :partner %>
+		<%= form.collection_select :id, NumberingPartner.all, :id, :disp_name, :include_blank => true %>
+	</p> -->
+	<p>
+		 <%= form.select :numbering_partner_id, NumberingPartner.all.map{|i| [i.disp_name, i.id]}, {:include_blank => true, :required => true} %>
+	</p>
+	<p><%= form.text_field :document, :size => 100, :required => true %></p>
+	<p><%= form.text_field :remarks, :size => 100, :required => false %></p>
+</div>

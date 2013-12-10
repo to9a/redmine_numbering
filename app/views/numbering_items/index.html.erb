@@ -1,0 +1,53 @@
+<!--　右上のボタン設定  -->
+<div class="contextual">
+    <%= link_to_if_authorized(l(:label_numbering_new), 
+                        {:action => 'new', :project_id => @project}, 
+                        :class => 'icon icon-add') %>
+    <!-- controllerで権限を判定しているのでcontrollerを明示的に設定する -->
+    <%= link_to_if_authorized(l(:label_numbering_parameter_edit), 
+                        {:action => 'index', :project_id => @project, :controller => 'numbering_prefixes'}, 
+                        :class => 'icon icon-edit') %>
+</div>
+
+<!-- タイトル文言 -->
+<h2><%=h l(:label_numbering_document_list) %></h2>
+
+<% if (@numbering_items.blank?) %>
+	<p class="nodata"><%= l(:label_no_data) %></p>
+<% else %>
+	<!-- 登録された採番一覧を表示  -->
+	<table class="list">
+		<thead>
+			<th><%=h l(:field_assigned)%></th>
+			<th><%=h l(:field_project)%></th>
+			<th><%=h l(:field_numbering_category)%></th>
+			<th><%=h l(:field_numbering_kind)%></th>
+			<th><%=h l(:field_numbering_partner)%></th>
+			<th><%=h l(:field_document)%></th>
+			<th><%=h l(:field_publisher)%></th>
+			<th><%=h l(:field_published_day)%></th>
+			<th></th>
+		</thead>
+		<tbody>
+			<% @numbering_items.each do |item| %>
+				<tr class="<%= cycle('odd', 'even') %>">
+					<td>
+						<%=(@categories_identifier[item.numbering_category_id - 1] + 
+							@kinds_identifier[item.numbering_kind_id - 1] + 
+							@partners_identifier[item.numbering_partner_id - 1] +
+							item.created_on.to_s[2,2] +
+							format("%03d", item.number) )%> 
+					</td>
+					<td><%=item.project_name %></td>
+					<td><%=@categories_disp_name[item.numbering_category_id - 1] %></td>
+					<td><%=@kinds_disp_name[item.numbering_kind_id - 1]%></td>
+					<td><%=@partners_disp_name[item.numbering_partner_id - 1]%></td>
+					<td><%=item.document %></td>
+					<td><%=item.publisher %></td>
+					<td><%=format_time(item.created_on, true) %></td>
+					<td><%=link_to l(:label_numbering_details), project_numbering_item_path(@project, item), :class => 'icon icon-report'%></td>
+				</tr>	
+			<% end %>
+		</tbody>
+	</table>
+<% end %>

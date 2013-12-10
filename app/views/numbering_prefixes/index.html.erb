@@ -1,0 +1,18 @@
+<!-- タイトル文言 -->
+<h2><%=h l(:label_numbering_parameter_list) %></h2>
+<br>
+<!-- パラメータ一覧を表示  -->
+<div id="param-list"; style="align:left; width:49%;">
+	<%= render :partial => 'numbering_prefixes/category_list' %>
+	<%= link_to l(:label_numbering_parameter_add), {:action => 'new', :project_id => @project,  :controller => 'numbering_prefixes_categories'}, :class => 'icon icon-add' %>
+</div>
+<br><br>
+<div id="param-list"; style="align:left; width:49%;">
+	<%= render :partial => 'numbering_prefixes/kind_list' %>
+	<%= link_to l(:label_numbering_parameter_add), {:action => 'new', :project_id => @project, :controller => 'numbering_prefixes_kinds'}, :class => 'icon icon-add' %>
+</div>
+<br><br>
+<div id="param-list"; style="align:left; width:49%;">
+	<%= render :partial => 'numbering_prefixes/partner_list' %>
+	<%= link_to l(:label_numbering_parameter_add), {:action => 'new', :project_id => @project, :controller => 'numbering_prefixes_partners'}, :class => 'icon icon-add' %>
+</div>

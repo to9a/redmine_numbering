@@ -1,0 +1,41 @@
+# English strings go here for Rails i18n
+en:
+  label_numbering: Numbering
+  project_module_numbering: Numbering plugin
+  permission_view_numbering_prefix: View
+  permission_manage_numbering_prefix: Insert/Delete/Edit
+  permission_manage_numbering_param: Param Edit
+  label_numbering_prefixes_new: numbering prefix　new
+  field_fixed: Fixed
+
+  label_numbering_document_list: Document List
+  label_numbering_document_new: Numbering Document New
+  label_numbering_document_edit: Numbering Document Edit
+
+  label_numbering_show: Document Infomation
+  label_numbering_parameter_edit: numbering parameter edit
+  label_numbering_parameter_list: parameter list
+  label_numbering_parameter: parameter
+  label_numbering_parameter_add: parameter add
+
+  permission_view_numbering_item: Document View
+  permission_manage_numbering_item: Document Insert/Delete/Edit
+
+  field_identifier: identifier
+  field_disp_name: display name
+
+  field_assigned: Assigned
+  field_project_name: Project 
+  field_model: Model 
+  field_numbering_category: Category 
+  field_numbering_kind: Kind 
+  field_numbering_partner: Partner
+  field_document: Document
+  field_publisher: Publisher 
+  field_published_day: Published Day 
+  field_remarks: Remarks 
+
+  label_numbering_new: New   
+  label_numbering_details: Details
+  label_numbering_edit: Edit
+  label_numbering_delete: Delete 

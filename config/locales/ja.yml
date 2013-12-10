@@ -1,0 +1,45 @@
+# Japanese strings go here for Rails i18n
+ja:
+  label_numbering: 採番
+  project_module_numbering: 採番プラグイン
+  permission_view_numbering_prefix: 閲覧
+  permission_manage_numbering_prefix: 登録/削除/編集
+  permission_manage_numbering_param: パラメータ編集
+
+  permission_view_numbering_item: 文書の閲覧
+  permission_manage_numbering_item: 文書の登録/削除/編集
+  
+  label_numbering_prefixes_new: 新規採番系列
+  field_fixed: 固定文言
+
+  label_numbering_document_list: 採番一覧
+  label_numbering_document_new: 新規採番
+  label_numbering_document_edit: 採番編集
+  label_numbering_document_show: 文書情報
+
+
+  label_numbering_parameter_edit: 採番用パラメータ編集
+  label_numbering_parameter_list: パラメータ一覧
+  label_numbering_parameter: パラメータ
+  label_numbering_parameter_add: パラメータ追加
+
+  field_identifier: 識別子
+  field_disp_name: 表示名称
+
+  field_assigned: 採番番号
+  field_project_name: プロジェクト 
+  field_model: モデル 
+  field_numbering_category: 分類 
+  field_numbering_kind: 種別 
+  field_numbering_partner: 提出先
+  field_document: 文書名 
+  field_publisher: 発行者 
+  field_published_day: 発行日 
+  field_remarks: 備考 
+
+  label_numbering_new: 新規登録 
+  label_numbering_details: 詳細 
+  label_numbering_edit: 編集 
+  label_numbering_delete: 削除 
+ 
+  

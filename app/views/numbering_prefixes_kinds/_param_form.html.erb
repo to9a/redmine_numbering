@@ -1,0 +1,8 @@
+<%= error_messages_for 'numbering_kind' %>
+<div>
+	<fieldset class="box tabular">
+		<legend><%= l(:label_numbering_parameter_add)%></legend>
+		<p><%= form.text_field :identifier, :size =>10, :required => true %></p>
+		<p><%= form.text_field :disp_name, :size => 20, :required => true %></p>
+	</fieldset>
+</div>

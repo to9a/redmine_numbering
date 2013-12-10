@@ -1,0 +1,12 @@
+<!-- リスト表示 -->
+<div id="list-partner"; style="float:left; width:49%; margin:0px 10px 0px 0px;">
+	<%= render :partial => 'numbering_prefixes_partners/param_list' %>
+</div>
+<div id="add-box"; style="float:left; width:49%; margin:20px 0px 0px 0px;">
+	<div id="list-add"; style="float:left;">
+		<%= labelled_form_for :numbering_prefix, @numbering_partner, :url => project_numbering_prefixes_partners_path(@project) do |f| %>
+			<%= render :partial => 'numbering_prefixes_partners/param_form', :locals => {:form => f} %>
+			<p align="right"><%= f.submit l(:button_create) %></p>
+		<% end %>
+	</div>
+</div>

@@ -1,0 +1,5 @@
+<h2><%=h l(:label_numbering_document_new) %></h2>
+<%= labelled_form_for :numbering_item, @numbering_item, :url => project_numbering_items_path(@project) do |f| %>
+	<%= render :partial => 'numbering_items/form', :locals => {:form => f} %>
+	<%= f.submit l(:button_create) %>
+<% end %>

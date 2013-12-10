@@ -1,0 +1,40 @@
+<div id="list-partner">
+	<!-- タイトル文言 -->
+	<h3><%=h l(:field_numbering_partner) %></h3>
+	<% if (@numbering_partners.blank?) %>
+		<p class="nodata"><%= l(:label_no_data) %></p>
+	<% else %>
+		<table class="list">
+			<thead>
+				<th><%=h l(:field_identifier)%></th>
+				<th><%=h l(:field_disp_name)%></th>
+				<th></th>
+				<th></th>				
+			</thead>
+			<tbody>
+				<% @numbering_partners.each do |i| %>
+					<!-- 以下クラス指定はRedmine特有。1行づつ色が変わります. -->
+					<tr class="<%= cycle('odd', 'even') %>">
+						<td><%= i.identifier %></td>
+						<td><%= i.disp_name %></td>
+						<td>
+							<%= link_to l(:button_edit), 
+							    {:action => 'edit', 
+							     :controller => 'numbering_prefixes_partners', :project_id => @project, :id => i.id}, :class => 'icon icon-edit'  %>
+		                </td>
+		                <td>
+						    <%= link_to l(:label_numbering_delete), 
+				                         {:action => 'destroy', 
+				                          :controller => 'numbering_prefixes_partners',
+										  :project_id => @project, 
+										  :id => i.id},
+							              :confirm => l(:text_are_you_sure),
+				            			  :method => :delete,
+				                          :class => 'icon icon-del' %>			                	
+		                </td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	<% end %>
+</div>

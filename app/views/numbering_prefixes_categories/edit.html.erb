@@ -1,0 +1,12 @@
+<!-- リスト表示 -->
+<div id="list-category"; style="float:left; width:49%; margin:0px 10px 0px 0px;">
+	<%= render :partial => 'numbering_prefixes_categories/param_list' %>
+</div>
+<div id="add-box"; style="float:left; width:49%; margin:20px 0px 0px 0px;">
+	<div id="list-add"; style="float:left;">
+		<%= labelled_form_for :numbering_prefix, @numbering_category, :url => project_numbering_prefixes_category_path(@project, @numbering_category.id) do |f| %>
+			<%= render :partial => 'numbering_prefixes_categories/param_form', :locals => {:form => f} %>
+			<p align="right"><%= f.submit l(:button_create) %></p>
+		<% end %>
+	</div>
+</div>

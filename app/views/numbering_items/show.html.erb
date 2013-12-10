@@ -1,0 +1,52 @@
+<h2><%=h l(:label_numbering_document_show) %> : <%=@numbering_number%></h2>
+
+<div style="float:left; width:49%;">
+	<div class="issue">      
+		<div class="subject">
+			<h3><%= @numbering_item.document %></h3>
+		</div>
+		<hr />
+		<table class="attributes">
+			<tr>
+				<th><%=l(:field_project_name) %> : </th>
+				<td><%=@numbering_item.project_name %></td>
+			</tr>
+			<tr>
+				<th><%=l(:field_numbering_category) %> : </th>
+				<td><%=@numbering_category.disp_name %></td>
+			</tr>
+			<tr>
+				<th><%=l(:field_numbering_kind) %> : </th>
+				<td><%=@numbering_kind.disp_name %></td>
+			</tr>
+			<tr>
+				<th><%=l(:field_numbering_partner) %> : </th>
+				<td><%=@numbering_partner.disp_name %></td>
+			</tr>
+			<tr>
+				<th><%=l(:field_publisher) %> : </th>
+				<td><%=@numbering_item.publisher %></td>
+			</tr>
+			<tr>
+				<th><%=l(:field_published_day) %> : </th>
+				<td><%=format_time(@numbering_item.created_on, true) %></td>
+			</tr>
+		</table>
+		<hr />
+		<p><strong><%=l(:field_remarks) %> : </p>
+		<% unless @numbering_item.remarks.blank? %>
+			<div class="wiki">
+		    	<%= textilizable @numbering_item.remarks %>
+		    </div>
+		<% end %>
+	</div>
+	<br>
+    <%= link_to_if_authorized(l(:button_edit), 
+					    {:action => 'edit', :project_id => @project, :id => @numbering_item.id}, 
+                        :class => 'icon icon-edit')  %>                        
+    <%= link_to_if_authorized(l(:label_numbering_delete), 
+                         {:action => 'destroy', :project_id => @project, :id => @numbering_item.id},
+			              :confirm => l(:text_are_you_sure),
+            			  :method => :delete,
+                          :class => 'icon icon-del') %>	
+</div>
