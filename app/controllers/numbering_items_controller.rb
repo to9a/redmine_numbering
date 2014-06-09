@@ -36,7 +36,7 @@ class NumberingItemsController < ApplicationController
     # @numbering_item.number = publish_year_document.count + 1
     publish_year_document_num = NumberingItem.maximum('number', :conditions => ["created_on like ?", publish_year])
     # logger.debug("[DEBUG]NumberingItemsController#create:publish_year_document=#{publish_year_document_num}")    
-    @numbering_item.number = publish_year_document_num + 1
+    @numbering_item.number = publish_year_document_num.to_i + 1
 
     # 発行者名を設定
     @numbering_item.publisher = User.find(User.current).name
