@@ -11,15 +11,9 @@ class NumberingItemsController < ApplicationController
   def index
     logger.debug("[DEBUG]NumberingItemsController#index")
     @numbering_items = NumberingItem.find(:all, :order => "created_on DESC")
-    numbering_categories = NumberingCategory.find(:all)
-    numbering_kinds = NumberingKind.find(:all)
-    numbering_partners = NumberingPartner.find(:all)
-    @categories_disp_name = numbering_categories.map(&:disp_name);
-    @kinds_disp_name = numbering_kinds.map(&:disp_name);
-    @partners_disp_name = numbering_partners.map(&:disp_name);
-    @categories_identifier = numbering_categories.map(&:identifier);
-    @kinds_identifier = numbering_kinds.map(&:identifier);
-    @partners_identifier = numbering_partners.map(&:identifier);
+    @numbering_categories = NumberingCategory.find(:all).index_by(&:id)
+    @numbering_kinds = NumberingKind.find(:all).index_by(&:id)
+    @numbering_partners = NumberingPartner.find(:all).index_by(&:id)
   end
 
   def new
