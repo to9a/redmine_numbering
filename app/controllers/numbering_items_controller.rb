@@ -93,10 +93,6 @@ class NumberingItemsController < ApplicationController
 private
   def find_project
     @project = Project.find(params[:project_id])
-
-    #　終了していないプロジェクトを作成日が新しい順に取得する
-    @active_project = Project.find(:all, :conditions => {:status => 1}, :order => "created_on DESC")
-    logger.debug("[DEBUG]NumberingItemsController#find_project:@active_project=#{@active_project}")
   rescue ActiveRecord::RecordNotFound
     render_404
   end

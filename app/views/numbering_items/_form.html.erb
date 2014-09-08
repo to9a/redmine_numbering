@@ -5,7 +5,7 @@
 		<%= form.collection_select :project_name, Project.all, :id, :name, :include_blank => true %>
 	</p> -->
 	<p>
-		<%= form.select :project_name, @active_project.map{|i| [i.name, i.name]}, {:include_blank => true, :required => true} %>
+		 <%= form.select :project_name, Project.all.map{|i| [i.name, i.name]}, {:include_blank => true, :required => true} %>
 	</p>
 	<!-- <p>
 		<%= form.label_for_field :category %>
