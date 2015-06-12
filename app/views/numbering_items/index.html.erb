@@ -34,9 +34,9 @@
                     <% if @numbering_categories[item.numbering_category_id].blank? ||
                           @numbering_kinds[item.numbering_kind_id].blank? ||
                           @numbering_partners[item.numbering_partner_id].blank? %>
-                      <td>----</td>
+                      <td align="center">----</td>
                     <% else %>
-                      <td>
+                      <td align="center">
                         <%=(@numbering_categories[item.numbering_category_id].identifier + 
                            @numbering_kinds[item.numbering_kind_id].identifier + 
                            @numbering_partners[item.numbering_partner_id].identifier +
@@ -44,26 +44,26 @@
                               format("%03d", item.number) )%>
                       </td>
                     <% end %>                                
-                    <td><%=item.project_name %></td>
+                    <td align="center"><%=item.project_name %></td>
                     <% if @numbering_categories[item.numbering_category_id].blank? %>
-                      <td>----</td>
+                      <td align="center">----</td>
                     <% else %>
-                      <td><%=@numbering_categories[item.numbering_category_id].disp_name %></td>
+                      <td align="center"><%=@numbering_categories[item.numbering_category_id].disp_name %></td>
                     <% end %>
                     <% if @numbering_kinds[item.numbering_kind_id].blank? %>
-                      <td>----</td>
+                      <td align="center">----</td>
                     <% else %>
-                      <td><%=@numbering_kinds[item.numbering_kind_id].disp_name %></td>
+                      <td align="center"><%=@numbering_kinds[item.numbering_kind_id].disp_name %></td>
                     <% end %>
                     <% if @numbering_partners[item.numbering_partner_id].blank? %>
-                      <td>----</td>
+                      <td align="center">----</td>
                     <% else %>
-                      <td><%=@numbering_partners[item.numbering_partner_id].disp_name %></td>
+                      <td align="center"><%=@numbering_partners[item.numbering_partner_id].disp_name %></td>
                     <% end %>
-                    <td><%=item.document %></td>
-                    <td><%=item.publisher %></td>
-                    <td><%=format_time(item.created_on, true) %></td>
-                    <td><%=link_to l(:label_numbering_details), project_numbering_item_path(@project, item), :class => 'icon icon-report'%></td>
+                    <td align="center"><%=item.document %></td>
+                    <td align="center"><%=item.publisher %></td>
+                    <td align="center"><%=format_time(item.created_on, true) %></td>
+                    <td align="center"><%=link_to l(:label_numbering_details), project_numbering_item_path(@project, item), :class => 'icon icon-report'%></td>
                 </tr>   
             <% end %>
         </tbody>
